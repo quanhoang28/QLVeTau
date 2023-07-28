@@ -1,0 +1,64 @@
+#menu_container{
+  margin: -10px;
+  background-color: #7581CB;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#menu_left{
+  width: 30%;
+}
+#menu_left a{
+  padding: 100px;
+}
+#menu_right{
+  width: 80%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+.mnItem{
+  padding-right: 60px;
+}
+a{
+  
+  text-decoration: none;
+  color: black;
+  
+}
+
+img{
+  width: 50px;
+
+}
+.dropDownMN{
+  margin-left: 1%;
+  margin-right: 6%;
+  height: 10px;
+  cursor: pointer;
+}
+#btnKiemTra{
+  position: relative;
+}
+.dropDownContent{
+  margin-left: -65px;
+  display: none;
+  text-align: center;
+  background-color: #A5AECF;
+  position: fixed;
+}
+.dropDownMN:hover .dropDownContent{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.dropDownContent a{
+  width: 200px;
+}
+.dropDownContent a:hover{
+  background-color: #D7D7D7;
+}

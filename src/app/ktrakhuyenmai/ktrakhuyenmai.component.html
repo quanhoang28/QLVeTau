@@ -1,0 +1,23 @@
+<div class="tieude">
+    <h1>Kiểm tra khuyến mại</h1>
+</div>
+
+<div class="ktrakhuyenmai">
+    <label for="ktrakm">Kiểm tra khuyến mãi: </label>    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" [(ngModel)]="keyword" id="ktrakm" name="ktrakm" >
+<button (click)="searchPromoCode()" style="border-radius: 4px !important; background-color:#ACD5E9; border: #ACD5E9; margin-left: 5px;" >Kiểm tra</button>
+
+</div>
+<div class="kqtimkiem">
+    <ul> 
+        <li *ngFor="let promoCode of searchResults">
+         <tr>
+          <li>Mã khuyễn mãi: {{ promoCode.id }}</li>
+          <li>Điều kiện khuyến mãi: {{ promoCode.dieukien }}</li>
+          <li>Thời hạn khuyến mãi: {{ promoCode.time }}</li>
+          <li>Giá trị khuyến mãi: {{ promoCode.giatri }}%</li>
+         </tr>  
+        </li>
+      </ul>
+</div>
+

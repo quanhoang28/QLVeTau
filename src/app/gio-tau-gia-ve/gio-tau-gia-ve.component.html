@@ -1,0 +1,62 @@
+<p style="font-size: xx-large;font-weight: 800;font-family: 'Times New Roman', Times, serif; text-align: center;">GIỜ TÀU - GIÁ VÉ</p>
+<div class="container">
+  <div id="optContainer">
+    <table id="tb" style="border: none;">
+      <tr>
+        <td id="tdTittle"><p>Ga đi :</p></td>
+        <td id="tdInput"><select name="gaDi" id="" [(ngModel)]="GaTauDi" (change)="hidden()">
+          <option *ngFor="let ga of DSGaTau" value="{{ga.idGaTau}}">{{ga.tengatau}}</option>
+        </select></td>
+        <td id="tdTittle"> <p>Ga đến: </p></td>
+        <td id="tdInput"> <select (change)="taiLaiDanhSachNgayDi()" name="gaDen" id="" [(ngModel)]="GaTauDen" (change)="hidden()">
+          <option *ngFor="let ga of DSGaTau" value="{{ga.idGaTau}}">{{ga.tengatau}}</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td id="tdTittle"> <p>Thời gian đi :</p></td>
+        <td id="tdInput"> <select name="NgayKhoiHanh" (change)="taiLaiHanhTrinh()" id="" [(ngModel)]="NgayDi">
+          <option *ngFor="let ngay of DSNgayDi" value="{{ngay.Column1}}">{{ngay.Column1}}</option>
+        </select></td>
+        <td id="tdTittle"> <p>Tàu :</p></td>
+        <td id="tdInput">  <select name="Tau" id="" [(ngModel)]="Tau">
+          <option *ngFor="let hanhTrinh of DSHanhTrinh" value="{{hanhTrinh.idHanhTrinh}}">{{hanhTrinh.idHanhTrinh}}</option>
+        </select></td>  
+      </tr>
+    </table>
+    <div id="btnContainer">
+      <button id="searchbtn" (click)="btnSearchClick()">search</button>
+    </div>
+  </div>
+</div>
+  <div id="tbContainer">
+      <table id="tbHanhTrinh">
+        <tr>
+          <td>Ga đi</td>
+          <td>Ngày đi</td>
+          <td>Khoảng cách</td>
+          <td>Giờ đi</td>
+          <td>Giờ đến</td>
+        </tr>
+        <tr *ngFor="let hanhTrinh of DSHanhTrinh">
+        <td [ngStyle]="{'color': hanhTrinh.TenGaTau===getTenGaByMaGa(GaTauDi,DSGaTau) ? 'red' : hanhTrinh.TenGaTau===getTenGaByMaGa(GaTauDen,DSGaTau)? 'red':'black'}">{{hanhTrinh.TenGaTau}}</td>
+          <td>{{hanhTrinh.Column1}}</td>
+          <td>{{hanhTrinh.TongQuangDuong}}</td>
+          <td>{{hanhTrinh.ThoiGianBD}}</td>
+          <td>{{hanhTrinh.ThoiGianKT}}</td>
+        </tr>
+      </table>
+      <table id="tbBangGia">
+        <tr>
+          <td>Id giá</td>
+          <td>Id loại chỗ</td>
+          <td>giá tiền</td>
+        </tr>
+        <tr *ngFor="let BangGia of DSGiaVe">
+          <td>{{BangGia.IDGia}}</td>
+          <td>{{BangGia.IDLoaiCho}}</td>
+          <td>{{BangGia.GiaTien}}</td>
+        </tr>
+      </table>
+  </div>
+  
+
