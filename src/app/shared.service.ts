@@ -7,16 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIurl="https://localhost:7184/api";
+  readonly APIurl="http://localhost:12302/api";
   constructor(private http:HttpClient) { }
   GetTenGa():Observable<any[]>{
     return this.http.get<any>(this.APIurl+'/HanhTrinh/GetTenGa');
   }
-  GetNgayDi(val:any):Observable<any[]>{
-    return this.http.get<any>("https://localhost:7184/api/HanhTrinh/GetNgayDi?gaDi="+val);
+  GetNgayDi(gaDi:any,gaDen:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetNgayDi?gaDi='+gaDi+'&gaDen'+gaDen);
   }
-  GetHanhTrinh(val:any):Observable<any[]>{
-    return this.http.get<any>("https://localhost:7184/api/HanhTrinh/GetHanhTrinh?ngayDi="+val);
+  GetHanhTrinh(ngayDi:any,gaTau:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetHanhTrinh?ngayDi'+ngayDi+'&gaTau='+gaTau);
   }
 
   GetBangGia():Observable<any[]>{

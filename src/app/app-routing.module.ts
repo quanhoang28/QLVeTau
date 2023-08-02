@@ -19,8 +19,8 @@ const routes: Routes = [
   {path:'LienHe',component:LienHeComponent},
   {path:'GioTau_GiaVe',component:GioTauGiaVeComponent},
   {path:'kiemtrave',component:KiemtraveComponent,children:[
-    {path:'hoanve',component:HoanveComponent},
-    {path:'doichuyen',component:HoanveComponent}]},
+  {path:'hoanve',component:HoanveComponent},
+  {path:'doichuyen',component:HoanveComponent}]},
   {path:'khuyenmai',component:KtrakhuyenmaiComponent}  ,
   {path:'ttdc',component:ThongtindatchoComponent},
   {path:'timve',component:TimveComponent},

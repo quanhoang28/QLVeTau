@@ -25,7 +25,7 @@ export class GioTauGiaVeComponent implements OnInit{
     this.taiLaiHanhTrinh();
   }
   taiLaiHanhTrinh(){
-    this.SharedService.GetHanhTrinh(this.NgayDi).subscribe(data=>{this.DSHanhTrinh=data;})
+    this.SharedService.GetHanhTrinh(this.NgayDi,this.GaTauDi).subscribe(data=>{this.DSHanhTrinh=data;})
     this.SharedService.GetBangGia().subscribe(data=>{this.DSGiaVe=data;})
   }
   getTenGaByMaGa(maGa: string, DSGaTau: any[]): string {
@@ -87,6 +87,6 @@ export class GioTauGiaVeComponent implements OnInit{
     this.SharedService.GetTenGa().subscribe(data=>{this.DSGaTau=data})
   }
   taiLaiDanhSachNgayDi(){
-    this.SharedService.GetNgayDi(this.GaTauDi).subscribe(data=>{this.DSNgayDi=data})
+    this.SharedService.GetNgayDi(this.GaTauDi,this.GaTauDen).subscribe(data=>{this.DSNgayDi=data})
   }
 }

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,7 +9,6 @@ import { LienHeComponent } from './lien-he/lien-he.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GioTauGiaVeComponent } from './gio-tau-gia-ve/gio-tau-gia-ve.component';
 import { SharedService } from './shared.service';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { KiemtraveComponent } from './kiemtrave/kiemtrave.component';
@@ -23,6 +23,7 @@ import { TimveComponent } from './timve/timve.component';
 import { HomeComponent } from './home/home.component';
 import { QuydinhComponent } from './quydinh/quydinh.component';
 import { HuongdanComponent } from './huongdan/huongdan.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 const routes: Routes = [
   {path:'/LienHe', component :LienHeComponent }
@@ -44,7 +45,8 @@ const routes: Routes = [
     TimveComponent,
     HomeComponent,
     QuydinhComponent,
-    HuongdanComponent
+    HuongdanComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

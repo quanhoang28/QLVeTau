@@ -3,20 +3,16 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    position: relative;
   }
   #searchContainer img{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    position: relative;
     opacity: 50%;
+    align-items: center;
   }
-  select{
-    width: 150px;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 20px;
-  }
+ 
   h1{
     font-family: 'Times New Roman', Times, serif;
     font-weight: 800;
@@ -25,23 +21,15 @@
   }
   p{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 14px;
+    font-size: 1vw;
     margin-left: 12%;
   }
-  #searchBar button{
-    width: 80px;
-    border: none;
-    height: 20px;
-    background-color: #ACD5E9;
-    border-radius: 3px;
-  }
-  #searchBar{
-    border-radius: 10px;
-    background-color: #7581CB;
-    display: inline-flex;
-    padding: 20px;
+
+  app-search-bar{
     position: absolute;
-    margin-top: 8%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   #picContainer{
     display: flex;
