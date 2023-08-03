@@ -1,83 +1,78 @@
 .giohang{
   border: 2px solid #D9D9D9;
-   height: 165px;
-   width: 600px;;
-   border-radius: 30px;
-   margin-left: 50%;
-   margin-top: -150px;
+   width: 50%;;
+   border-radius: 25px;
+   margin-left: 48%;
+   margin-top: -14%;
+   justify-content: center;
 }
 .gio{
     border: 2px solid #D9D9D9;
-    height: 60px;
-    width: 580px;
+    width: 97%;
     border-radius: 15px;
-    margin: 30px;
     background-color: #D9D9D9;
-    margin-left: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding: 10px;
-
+    margin-left: 1.5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    justify-content: center;
 }
 .chuyentau{
     border: 2px solid #D9D9D9;
    height: 500px;
-   width: 250px;;
+   width: 300px;;
    border-radius: 30px;
-   margin: 30px;
    margin-left: 5%;
-   margin-top: 10px;
+   margin-top: 3%;
 
 }
 .lichtrinh{
     border: 2px solid #D9D9D9;
-    height: 80px;
-    width: 225px;
+ 
+    width: 93%;
     border-radius: 15px;
     margin: 30px;
     background-color: #D9D9D9;
-    margin-left: 10px;
+    margin-left: 3%;
     margin-top: 8px;
     margin-bottom: 8px;
     padding: 10px;
+    justify-content: center;
 }
 .toatau{
     border: 2px solid #D9D9D9;
-    height: 80px;
-    width: 850px;;
+    width: 67%;
     border-radius: 25px;
-    margin-left: 35%;
-    margin-top: -37%;
+    margin-left: 32%;
+    margin-top: -40%;
+    justify-content: center;
 }
 .toa{
     border: 2px solid #D9D9D9;
-    height: 30px;
-    width: 80px;
+    width: 10%;
     border-radius: 5px;
-    margin: 30px;
     background-color: #D9D9D9;
-    margin-left: 20px;
-    margin-top: 10px;
-    padding: 10px;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 15px;
 }
 .ghe{
     border: 2px solid #D9D9D9;
-    height: 400px;
-    width: 850px;;
+    height: 390px;
+    width: 67%;
     border-radius: 25px;
-    margin-left: 35%;
+    margin-left: 32%;
     margin-top: 1%;
+    justify-content: center;
 }
 .vtrighe{
     border: 2px solid #D9D9D9;
-    height: 50px;
-    width: 80px;
+    width: 9%;
     border-radius: 5px;
-    margin: 30px;
     background-color: #D9D9D9;
-    margin-left: 20px;
-    margin-top: 10px;
-    padding: 10px;
+    margin-left: 3%;
+    margin-top: 2%;
+    padding: 12px;
 }
 .table{
 text-align: center;
