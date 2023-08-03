@@ -1,7 +1,9 @@
 <div id="searchBar">
-  <select name="GaDi" id="">
+  <select name="GaDi" id="" [(ngModel)]="gaDi">
+    <option *ngFor="let ga of DanhSachGa" value="{{ga.idGaTau}}">{{ga.tengatau}}</option>
   </select>
-  <select name="GaDi" id="">
+  <select name="GaDi" id="" [(ngModel)]="gaDen">
+    <option *ngFor="let ga of DanhSachGa" value="{{ga.idGaTau}}">{{ga.tengatau}}</option>
   </select>
   <select name="GaDi" id="">
   </select>

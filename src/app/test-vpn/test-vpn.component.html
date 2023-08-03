@@ -1,0 +1,9 @@
+<div class="TauList">
+  <div class="tauItem" *ngFor="let tau of DSTau" (click)="TauSelected(tau.MaTau)">{{tau.MaTau}}</div>
+</div>
+<div class="ToaList">
+  <div class="ToaItem" *ngFor="let toa of DSToa" (click)="ToaSelected(toa.MaToaTau)">{{toa.MaToaTau}}</div>
+</div>
+<div class="GheList">
+  <div class="gheItem" *ngFor="let ghe of DSGhe" >{{ghe.SoGhe}}</div>
+</div>

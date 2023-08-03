@@ -1,0 +1,38 @@
+.TauList{
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: 5%;
+}
+.tauItem{
+  width: 80%;
+  background-color: aqua;
+  text-align: center;
+  margin: 10px;
+  min-height: 50px;
+}
+.ToaList{
+  width: 500px;
+  height: 80px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.ToaItem{
+  width: 20%;
+  background-color: aqua;
+  text-align: center;
+  margin: 10px;
+  height: 60%;
+}
