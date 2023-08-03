@@ -23,15 +23,18 @@ export class SharedService {
     return this.http.get<any>(this.APIurl+'/GiaVe/getBangGia');
   }
   GetTau():Observable<any[]>{
-    return this.http.get<any>("https://localhost:7184/api/Ve/getTau");
+    return this.http.get<any>(this.APIurl+"/Ve/getTau");
   }
   GetToa(idTau:any):Observable<any[]>{
-    return this.http.get<any>("https://localhost:7184/api/Ve/getToaTau?idTau="+idTau);
+    return this.http.get<any>(this.APIurl+"Ve/getToaTau?idTau="+idTau);
   }
   GetGhe(idToa:any):Observable<any[]>{
-    return this.http.get<any>("https://localhost:7184/api/Ve/getGhe?idToa="+idToa)
+    return this.http.get<any>(this.APIurl+"Ve/getGhe?idToa="+idToa)
   }
   GetNgayDen(gaDi:any,gaDen:any):Observable<any[]>{
     return this.http.get<any>(this.APIurl+'/HanhTrinh/GetNgayDen?gaDi='+gaDi+'&gaDen'+gaDen);
+  }
+  GetHTNgayDen(gaDi:any,ngayDi:any,ngayDen:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetHanhTrinhCoNgayDen?ngayDi='+ngayDi+'&gaTau='+gaDi+'&ngayDen='+ngayDen);
   }
 }
