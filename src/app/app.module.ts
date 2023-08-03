@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import { QuydinhComponent } from './quydinh/quydinh.component';
 import { HuongdanComponent } from './huongdan/huongdan.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { TestVPNComponent } from './test-vpn/test-vpn.component';
 
 const routes: Routes = [
   {path:'/LienHe', component :LienHeComponent }
@@ -46,7 +47,8 @@ const routes: Routes = [
     HomeComponent,
     QuydinhComponent,
     HuongdanComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    TestVPNComponent
   ],
   imports: [
     BrowserModule,
