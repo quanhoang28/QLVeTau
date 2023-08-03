@@ -1,37 +1,60 @@
 <h1 style="text-align:center;">Đổi chuyến</h1>
 <p style="text-align: center;"><b>Chọn chuyến</b> > Xác thực thông tin</p>
 <div class="doichuyen">
-    <label for="gadi">Ga đi:</label>
+    <table>
+        <tr>
+            <td>
+                <label for="gadi">Ga đi:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="gadi" name="gadi" style="margin-left: 30px; margin-bottom: 20px;">
+            </td>
+            <td>
+                <label for="gaden">Ga đến:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="gaden" name="gaden" style="margin-left: 30px; margin-bottom: 20px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="thoigiandi">Thời gian đi:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" id="thoigiandi" name="thoigiandi" style="margin-bottom: 20px;">
+   
+            </td>
+            <td>
+                <label for="thoigianden">Thời gian đến:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" id="thoigianden" name="thoigianden" style="margin-bottom: 20px;">
+  
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tau">Tàu:</label>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="gadi" name="gadi">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <label for="gaden">Ga đến:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="gaden" name="gaden"> 
-    &nbsp;&nbsp;&nbsp;&nbsp;<br>
-    <label for="thoigiandi">Thời gian đi:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="date" id="thoigiandi" name="thoigiandi">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <label for="thoigianden">Thời gian đến:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="date" id="thoigianden" name="thoigianden">
-    &nbsp;&nbsp;&nbsp;&nbsp;<br>
-    <label for="tau">Tàu:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="tau" name="tau">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <label for="toa">Toa:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="toa" name="toa">
-    &nbsp;&nbsp;&nbsp;&nbsp;<br>
-    <label for="ghe">Ghế:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="ghe" name="ghe"><br>
-    <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 3px;
+    <input type="text" id="tau" name="tau" style="margin-left: 34px; margin-bottom: 20px;">
+            </td>
+            <td>
+                <label for="toa">Toa:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="toa" name="toa" style="margin-left: 42px; margin-bottom: 20px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="ghe">Ghế:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="ghe" name="ghe" style="margin-left: 34px; margin-bottom: 20px;">
+            </td>
+        </tr>
+    </table>
+    <a routerLink="/xndc">
+           <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 3px;
                margin-left: 400px; ">
         Tiếp theo
      </button>
+    </a>
+ 
      <br><br><br>
    
 

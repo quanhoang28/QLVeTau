@@ -12,15 +12,18 @@ import { TimveComponent } from './timve/timve.component';
 import { HomeComponent } from './home/home.component';
 import { QuydinhComponent } from './quydinh/quydinh.component';
 import { HuongdanComponent } from './huongdan/huongdan.component';
+import { DoichuyenComponent } from './kiemtrave/doichuyen/doichuyen.component';
+import { XndoichuyenComponent } from './kiemtrave/doichuyen/xndoichuyen/xndoichuyen.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'\home',pathMatch:'full'},
   {path:'home',component:HomeComponent},
   {path:'LienHe',component:LienHeComponent},
   {path:'GioTau_GiaVe',component:GioTauGiaVeComponent},
-  {path:'kiemtrave',component:KiemtraveComponent,children:[
+  {path:'kiemtrave',component:KiemtraveComponent},
   {path:'hoanve',component:HoanveComponent},
-  {path:'doichuyen',component:HoanveComponent}]},
+  {path:'doichuyen',component:DoichuyenComponent},
+  {path:'xndc',component:XndoichuyenComponent},
   {path:'khuyenmai',component:KtrakhuyenmaiComponent}  ,
   {path:'ttdc',component:ThongtindatchoComponent},
   {path:'timve',component:TimveComponent},

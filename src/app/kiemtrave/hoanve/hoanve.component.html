@@ -1,28 +1,42 @@
 <h1 style="text-align:center;">Hoàn vé</h1>
 <div class="hoanve">
-    <label for="mave">Mã vé:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="mave" name="mave">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <label for="nganhang">Ngân hàng:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="nganhang" name="nganhang"> 
-    &nbsp;&nbsp;&nbsp;&nbsp;<br>
-    <label for="adt">Số điện thoại mua vé:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="sdt" name="sdt">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <label for="stk">Số tài khoản:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="stk" name="stk">
-    &nbsp;&nbsp;&nbsp;&nbsp;<br>
-    <label for="maxn">Mã xác nhận:</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="maxn" name="maxn"> 
+    <table class="hv">
+        <tr>
+            <td>
+                <label for="mave">Mã vé:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="mave" name="mave" style="margin-left: 28%;margin-bottom: 10%;">
+            </td>
+            <td>
+                <label for="nganhang">Ngân hàng:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="nganhang" name="nganhang" style="margin-left: 2%; margin-bottom: 10%;"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="adt">Số điện thoại mua vé:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="text" id="sdt" name="sdt" style="margin-bottom: 10%;">
+            </td>
+            <td>
+                <label for="stk">Số tài khoản:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="text" id="stk" name="stk" style="margin-bottom: 10%;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="maxn">Mã xác nhận:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="text" id="maxn" name="maxn" style=" margin-left: 15%; margin-bottom: 10%;"> 
+            </td>
+        </tr>
+    </table>
     <br>
     <p><u>Vui lòng nhập mã xác nhận được gửi đến số điện thoại xác nhận danh tính!</u></p>
    <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 3px;
-               margin-left: 500px; " (click)="onhoanve()">
+               margin-left: 85%; " (click)="onhoanve()">
     Hoàn vé
      </button>
 </div>

@@ -1,36 +1,40 @@
 .ttdc{
     border: 2px solid #D9D9D9;
-   height:80px;
-   width: 750px;
+
+   width: 65%;
    margin:10px;
    padding: 30px;
    border-radius: 15px;
-   margin-left: 330px;
+   margin-left: 20%;
+   justify-content: center;
  
    }
    .kqttdt{
    margin-top: -10px;
     border: 2px solid #D9D9D9;
-    height:400px;
-    width: 750px;
-    margin-left: 330px;
+  
+    width: 65%;
+    margin-left: 20%;
     padding: 40px;
     border: 1px solid black;
+    justify-content: center;
    }
  .pttt{
     font-size: 14px;
     border: 1px solid rgb(213, 211, 211);
     margin-top : -200px;
-    margin-left: 300px;
-    width: 400px;
-    height: 250px;
+    margin-left: 50%;
+    width: 43%;
+ 
     padding: 40px;
     border-radius: 20px;
+    justify-content: center;
  }
  .tieude{
    margin: 10px;
-   margin-left: 600px;
+   margin-left: 42%;
    margin-bottom:30px ;
+   justify-content: center;
    
 }
 
