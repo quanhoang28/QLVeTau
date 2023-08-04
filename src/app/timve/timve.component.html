@@ -1,111 +1,108 @@
-
-    <title>Tìm vé</title>
+<title>Tìm vé</title>
   
-    <div class="tv">
-      <h1 style="color: black;text-align:center;">Tìm vé</h1>
-      <div style="background-color: #7581CB;padding: 20px;margin: 3%;margin-top: 0%;border-radius:10px 10px 10px 10px;">
-        <input type="text" value="Ga đi" style="margin-left: 100px;">
-        <input type="text" value="Ga đến" style="margin-left: 100px;">
-        <input type="text" value="Thời gian đi" style="margin-left: 100px;">
-        <input type="text" value="Thời gian đến" style="margin-left: 100px;">
-        <button style="background-color:#ACD5E9;margin-left:100px; border:1px solid #ACD5E9 ; padding: 8px; border-radius: 3px;">Tìm kiếm</button>
-      </div>
-      <div>
-        <h6 style="background-color: #A5aecf;padding: 13px;margin: 3%;margin-top: -2%;border-radius:0px 90px 0px 0px; width: 500px;">Đi từ:...đến...Ngày.../.../...</h6>
-      </div>
-      <div style="margin-left:5% ;margin-top: -2%;border-style:groove;border-radius:20px 20px 20px 20px;width: 500px;height: 170px;">
-        <div style="display: flex; flex-direction: row;">
-          <h6 style="font-weight: bold;margin-left:3% ;">Trạng thái toa</h6>
-          <h6 style="font-weight: bold;margin-left:25% ;">Trạng thái ghế</h6>
-        </div>
-        <div style="display: flex; flex-direction: row;">
-          <h6 style="margin-left:3% ;margin-top: 2%; margin-bottom: 4%;">Toa còn vé:</h6>
-          <button style="background-color: #d9d9d9;margin-left: 39px;height: 25px;width: 80px; border: 1px solid #d9d9d9;">Toa</button>
-          <h6 style="margin-left:3% ;margin-top: 2%;">Ghế trống:</h6>
-          <button style="background-color: #d9d9d9;margin-left: 24px;height: 25px;width: 80px; border: 1px solid #d9d9d9;">Số ghế</button>
-        </div>
-        <div style="display: flex; flex-direction: row;">
-          <h6 style="margin-left:3% ;margin-top: 2%; margin-bottom: 4%;">Toa đang chọn:</h6>
-          <button style="background-color: #7581CB;margin-left: 20px;height: 25px;width: 80px; border: 1px solid #7581CB; color: white;">Toa</button>
-          <h6 style="margin-left:3% ;margin-top: 2%;font-size:80%;">Số ghế đã hết:</h6>
-          <button style="background-color:red;margin-left: 20px;height: 25px;width: 80px; border: 1px solid red; color: white;">Số ghế</button>
-        </div>
-         <div style="display: flex; flex-direction: row;">
-          <h6 style="margin-left:3% ;margin-top: 2%;">Toa hết vé:</h6>
-          <button style="background-color:red;margin-left: 40px;height: 25px;width: 80px; border: 1px solid red; color: white;">Toa</button>
-        </div>
-      </div>
-      <div class="giohang">
-        <div class="gio">
-          <table class="table">
-            <tr>
-                <td>Thời gian đi:</td>
-                <td>Thời gian đến:</td>
-                <td rowspan="3">Thời gian giữ vé</td>
-                <td rowspan="3"><input type="checkbox" value=""></td>
-               </tr>
-               <tr>
-                <td>Ga đi:</td>
-                <td>Ga đến:</td>
-               </tr>
-               <tr>
-                <td>Số ghế</td>
-                <td>Loại chỗ</td>
-               </tr>
-          </table>
-        </div>
-        <div class="btt">
-          <table>
-            <tr>
-              <td><h3>Giỏ vé</h3></td>
-              <td><button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 5px;
-                padding: 8px; margin: 10px;margin-top: 5px ; ;margin-left: 200px; ">
-                 Xóa khỏi giỏ hàng
-                </button></td>
-                <td><button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 5px;
-                  padding: 8px; margin: 8px;margin-left: 50px; margin-top: 5px;">
-                  Mua vé
-                </button></td>
-            </tr>
-          </table>
-
-        </div>
-      </div>
-      <div class="chuyentau">
-        <h3 style="text-align: center;">Chuyến tàu</h3>
-        <div class="lichtrinh">
-          <table>
-            <tr>
-              <td>
-                Thời gian đi
-              </td>
-            </tr>
-              <tr>
-                <td>
-                  Thời gian đến
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Số chỗ trống
-                </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <td>
-                  Số chỗ đã đặt
-                </td>
-              </tr>
-          </table>
-        </div>
-      </div>
-      <div class="toatau">
-        <h3 style="margin-left: 30px; margin-top: 10px;">Toa tàu</h3>
-        <div class="toa">
-          <p style="text-align: center; margin: -5px;">TOA 1</p>
-        </div>
-      </div>
-      <div class="ghe">
-        <h3 style="margin-left: 30px; margin-top: 10px;">Ghế</h3>
-        <div class="vtrighe">
-          <p style="text-align: center; margin: 3px;">Ghế số</p>
-        </div>
-      </div>
+<div class="tv">
+  <h1 style="color: black;text-align:center;">Tìm vé</h1>
+  <div style="background-color: #7581CB;padding: 1vw;margin: 3vw;margin-top: 1vw;border-radius:1vw 1vw 1vw 1vw;">
+    <input type="text" value="Ga đi" style="margin-left: 5vw;">
+    <input type="text" value="Ga đến" style="margin-left: 5vw;">
+    <input type="text" value="Thời gian đi" style="margin-left: 5vw;">
+    <input type="text" value="Thời gian đến" style="margin-left: 5vw;">
+    <button style="background-color:#ACD5E9;margin-left:5vw; border:0.20vw solid #ACD5E9 ; padding: -4 vw; ">Tìm kiếm</button>
+  </div>
+  <div>
+    <h6 style="background-color: #A5aecf;padding: 1vw;margin: 3vw;margin-top: -2vw;border-radius:0vw 70vw 0vw 0vw; width: 40vw;">Đi từ:...đến...Ngày.../.../...</h6>
+  </div>
+  <div style="margin-left:5vw ;margin-top: -2vw;border-style:groove;border-radius:2vw 2vw 2vw 2vw;width: 40vw;height: 15vw;">
+    <div style="display: flex; flex-direction: row;">
+      <h6 style="font-weight: bold;margin-left:2vw ;">Trạng thái toa</h6>
+      <h6 style="font-weight: bold;margin-left:10vw ;">Trạng thái ghế</h6>
     </div>
+    <div style="display: flex; flex-direction: row;">
+      <h6 style="margin-left: 1.2vw ;margin-top: 1vw; margin-bottom: 2vw;">Toa còn vé:</h6>
+      <button style="background-color: #d9d9d9;margin-left: 3vw;height: 2vw;width: 6vw; border: 1px solid #d9d9d9;">Toa</button>
+      <h6 style="margin-left:1.5vw ;margin-top: 1vw;">Ghế trống:</h6>
+      <button style="background-color: #d9d9d9;margin-left: 24px;height: 25px;width: 80px; border: 1px solid #d9d9d9;">Số ghế</button>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+      <h6 style="margin-left:3% ;margin-top: 2%; margin-bottom: 4%;">Toa đang chọn:</h6>
+      <button style="background-color: #7581CB;margin-left: 20px;height: 25px;width: 80px; border: 1px solid #7581CB; color: white;">Toa</button>
+      <h6 style="margin-left:3% ;margin-top: 2%;font-size:80%;">Số ghế đã hết:</h6>
+      <button style="background-color:red;margin-left: 20px;height: 25px;width: 80px; border: 1px solid red; color: white;">Số ghế</button>
+    </div>
+     <div style="display: flex; flex-direction: row;">
+      <h6 style="margin-left:3% ;margin-top: 1%;">Toa hết vé:</h6>
+      <button style="background-color:red;margin-left: 40px;height: 25px;width: 80px; border: 1px solid red; color: white;">Toa</button>
+    </div>
+  </div>
+  <div class="giohang">
+    <div class="gio">
+      <table class="table">
+        <tr>
+            <td>Thời gian đi:</td>
+            <td>Thời gian đến:</td>
+            <td rowspan="3">Thời gian giữ vé</td>
+            <td rowspan="3"><input type="checkbox" value=""></td>
+           </tr>
+           <tr>
+            <td>Ga đi:</td>
+            <td>Ga đến:</td>
+           </tr>
+           <tr>
+            <td>Số ghế</td>
+            <td>Loại chỗ</td>
+           </tr>
+      </table>
+    </div>
+    <div class="btt">
+      <table>
+        <tr>
+          <td><h3 style="margin-top: 9vw;">Giỏ vé</h3></td>
+          <td><button style="background-color: #ACD5E9; border: 0vw solid #ACD5E9;border-radius: 0.5vw;
+            padding: 0.5vw; margin: 1vw;margin-top: 9vw ; margin-left: 15vw; ">
+             Xóa khỏi giỏ hàng
+            </button></td>
+            <td><button style="background-color: #ACD5E9; border: 0vw solid #ACD5E9;border-radius: 0.5vw;
+              padding: 0.5vw; margin: 1vw;margin-left: 1vw; margin-top: 9vw;">
+              Mua vé
+            </button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="chuyentau">
+    <h6 style="text-align: center;">Chuyến tàu</h6>
+    <div class="lichtrinh">
+      <table>
+        <tr>
+          <td>
+            Thời gian đi...
+          </td>
+        </tr>
+          <tr>
+            <td>
+              Thời gian đến...
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Số chỗ trống...
+            </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>
+              Số chỗ đã đặt...
+            </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+  <div class="toatau">
+    <h6 style="margin-left: 3vw; margin-top: 1vw;">Toa tàu</h6>
+    <div class="toa">
+      <p style="text-align: center; margin: -1vw;">TOA 1</p>
+    </div>
+  </div>
+  <div class="ghe">
+    <h6 style="margin-left: 3vw; margin-top: 1vw;">Ghế</h6>
+    <div class="vtrighe">
+      <p style="text-align: center; margin: 0.2vw;">Ghế số</p>
+    </div>
+  </div>
