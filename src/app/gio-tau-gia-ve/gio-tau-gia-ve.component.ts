@@ -88,5 +88,6 @@ export class GioTauGiaVeComponent implements OnInit{
   }
   taiLaiDanhSachNgayDi(){
     this.SharedService.GetNgayDi(this.GaTauDi,this.GaTauDen).subscribe(data=>{this.DSNgayDi=data})
+    alert(this.GaTauDi+this.GaTauDen)
   }
 }

@@ -1,5 +1,5 @@
 #searchBar button{
-  width: 80px;
+  width: 10vw;
   border: none;
   height: 20px;
   background-color: #ACD5E9;
@@ -10,9 +10,10 @@
   background-color: #7581CB;
   display: inline-flex;
   padding: 20px;
+  width: 90vw;
 }
 select{
-  width: 150px;
+  width: 20vw;
   margin-left: 20px;
   margin-right: 20px;
   height: 20px;

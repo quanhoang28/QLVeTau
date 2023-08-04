@@ -1,22 +1,26 @@
 import { __values } from 'tslib';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
   readonly APIurl="http://localhost:12302/api";
+  behaviorSubect=new BehaviorSubject<any>(null);
   constructor(private http:HttpClient) { }
   GetTenGa():Observable<any[]>{
     return this.http.get<any>(this.APIurl+'/HanhTrinh/GetTenGa');
   }
   GetNgayDi(gaDi:any,gaDen:any):Observable<any[]>{
-    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetNgayDi?gaDi='+gaDi+'&gaDen'+gaDen);
+    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetNgayDi?gaDi='+gaDi+'&gaDen='+gaDen);
+  }
+  GetNgayDen(gaDi:any,gaDen:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetNgayDen?gaDi='+gaDi+'&gaDen='+gaDen);
   }
   GetHanhTrinh(ngayDi:any,gaTau:any):Observable<any[]>{
-    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetHanhTrinh?ngayDi'+ngayDi+'&gaTau='+gaTau);
+    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetHanhTrinh?ngayDi='+ngayDi+'&gaTau='+gaTau);
   }
 
   GetBangGia():Observable<any[]>{
@@ -26,15 +30,31 @@ export class SharedService {
     return this.http.get<any>(this.APIurl+"/Ve/getTau");
   }
   GetToa(idTau:any):Observable<any[]>{
-    return this.http.get<any>(this.APIurl+"Ve/getToaTau?idTau="+idTau);
+    return this.http.get<any>(this.APIurl+'/Ve/getToaTau?idTau='+idTau);
   }
+
   GetGhe(idToa:any):Observable<any[]>{
-    return this.http.get<any>(this.APIurl+"Ve/getGhe?idToa="+idToa)
+    return this.http.get<any>(this.APIurl+"/Ve/getGhe?idToa="+idToa);
   }
-  GetNgayDen(gaDi:any,gaDen:any):Observable<any[]>{
-    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetNgayDen?gaDi='+gaDi+'&gaDen'+gaDen);
+  GetHTNgayDen(ngayDi:any,gaDi:any,ngayDen:any,gaDen:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/HanhTrinh/GetHanhTrinhCoNgayDen?ngayDi="+ngayDi+"&gaTau="+gaDi+"&ngayDen="+ngayDen+"&gaDen="+gaDen);
   }
-  GetHTNgayDen(gaDi:any,ngayDi:any,ngayDen:any):Observable<any[]>{
-    return this.http.get<any>(this.APIurl+'/HanhTrinh/GetHanhTrinhCoNgayDen?ngayDi='+ngayDi+'&gaTau='+gaDi+'&ngayDen='+ngayDen);
+  sendHanhTrinh(hanhTrinh:any){
+    this.behaviorSubect.next(hanhTrinh);
+  }
+  GetGioVe():Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/Ve/GetGioVe");
+  }
+  InsertGioVe(val:any){
+    return this.http.post<any>(this.APIurl+"/Ve/insertGioVe",val);
+  }
+  GetLoaiGhe(toaTau:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/Ve/GetLoaiGhe?maToa="+toaTau)
+  }
+  GetDoanTau(maTau:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/Ve/getDoanTau?maTau="+maTau)
+  }
+  GetThongTinDoanTau(maDoanTau:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/Ve/GetThongTinDoanTau?maDoanTau="+maDoanTau)
   }
 }

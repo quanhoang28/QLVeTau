@@ -2,12 +2,14 @@
   <select name="GaDi" id="" [(ngModel)]="gaDi">
     <option *ngFor="let ga of DanhSachGa" value="{{ga.idGaTau}}">{{ga.tengatau}}</option>
   </select>
-  <select name="GaDi" id="" [(ngModel)]="gaDen">
+  <select name="GaDen" id="" [(ngModel)]="gaDen" (change)="LayNgayKhoiHanh()">
     <option *ngFor="let ga of DanhSachGa" value="{{ga.idGaTau}}">{{ga.tengatau}}</option>
   </select>
-  <select name="GaDi" id="">
+  <select name="NgayDi" id="" [(ngModel)]="NgayDi" (change)="LayNgayDen()">
+    <option *ngFor="let ngay of DanhSachNgayDi" value="{{ngay.Column1}}">{{ngay.Column1}}</option>
   </select>
-  <select name="GaDi" id="">
+  <select name="NgayDen" id="" [(ngModel)]="NgayDen" (change)="LayLichTrinh()">
+    <option *ngFor="let ngay of DanhSachNgayDen" value="{{ngay.Column1}}">{{ngay.Column1}}</option>
   </select>
   <button (click)="TimVe()" >Tìm kiếm</button>
 </div>

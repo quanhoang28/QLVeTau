@@ -1,48 +1,45 @@
-
-
   
-
-  .dropDownMN{
-    margin-left: 1%;
-    margin-right: 6%;
-    height: 10px;
-    cursor: pointer;
-    height: 100%;
-  }
-  #btnKiemTra{
-    position: relative;
-  }
-  .dropDownContent{
-    margin-left: -65px;
-    display: none;
-    text-align: center;
-    background-color: #A5AECF;
-    position: fixed;
-    z-index: 1;
-  }
-  .dropDownMN:hover .dropDownContent{
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  .dropDownContent a{
-    width: 200px;
-  }
-  .dropDownContent a:hover{
-    background-color: #D7D7D7;
-  }
 .tv{
     justify-content: center;
 }
+text{font-size: 4vw;}
 .giohang{
-  border: 0.25vw solid #D9D9D9;
+    width: 100%;
+    height: 70%;
+   justify-content: center;
+   text-align: center;
+   overflow-y:scroll;
+}
+.containerGio{
+   border: 0.25vw solid #D9D9D9;
    width: 50%;
-   height: 15vw;
    border-radius: 2vw;
    margin-left: 48%;
    margin-top: -15%;
-   justify-content: center;
-   text-align: center;
+   height: 15vw;
+}
+.btnContainer{
+    height: 30%;
+    border-top:1px solid black ;
+}
+.btnContainer table{
+    width: 100%;
+}
+.btnContainer button{
+    border-radius: 8px;
+    border: none;
+    padding: 0.5vw;
+    background-color: #ACD5E9;
+}
+.btnContainer td{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    padding-top: 1.5vw
+}
+.searchContainer{
+    display: flex;
+    justify-content: center;
 }
 .gio{
     border: 1vw solid #D9D9D9;
@@ -78,6 +75,7 @@
     padding: 1vw;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
 }
 .toatau{
     border: 0.1vw solid #D9D9D9;
@@ -86,6 +84,22 @@
     margin-left: 32%;
     margin-top: -42.5%;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.listToa{
+    display: flex;
+    justify-content: center;
+    height: 5vw;
+    width: 80%;
+}
+.Listghe{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    overflow-x: scroll;
 }
 .toa{
     border: 0.1vw solid #D9D9D9;
@@ -97,6 +111,7 @@
     margin-bottom: 2%;
     padding: 1vw;
     text-align: center;
+    cursor: pointer;
 }
 .ghe{
     border: 0.2vw solid #D9D9D9;
@@ -109,13 +124,14 @@
 }
 .vtrighe{
     border: 0.1vw solid #D9D9D9;
-    width: 9%;
+    width: 5vw;
+    height: 5vw;
     border-radius: 1vw;
     background-color: #D9D9D9;
-    margin-left: 3%;
-    margin-top: 2%;
     padding: 1vw;
     text-align: center;
+    margin: 1vw;
+    cursor: pointer;
 }
 .table{
 text-align: center;

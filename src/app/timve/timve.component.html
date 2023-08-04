@@ -1,16 +1,13 @@
 <title>Tìm vé</title>
   
 <div class="tv">
-  <h1 style="color: black;text-align:center;">Tìm vé</h1>
-  <div style="background-color: #7581CB;padding: 1vw;margin: 3vw;margin-top: 1vw;border-radius:1vw 1vw 1vw 1vw;">
-    <input type="text" value="Ga đi" style="margin-left: 5vw;">
-    <input type="text" value="Ga đến" style="margin-left: 5vw;">
-    <input type="text" value="Thời gian đi" style="margin-left: 5vw;">
-    <input type="text" value="Thời gian đến" style="margin-left: 5vw;">
-    <button style="background-color:#ACD5E9;margin-left:5vw; border:0.20vw solid #ACD5E9 ; padding: -4 vw; ">Tìm kiếm</button>
+  <h1 style="color: black;text-align:center;margin: 2vw;">Tìm vé</h1>
+  <div class="searchContainer">
+    <app-search-bar></app-search-bar>
   </div>
+
   <div>
-    <h6 style="background-color: #A5aecf;padding: 1vw;margin: 3vw;margin-top: -2vw;border-radius:0vw 70vw 0vw 0vw; width: 40vw;">Đi từ:...đến...Ngày.../.../...</h6>
+    <h6 style="background-color: #A5aecf;padding: 1vw;margin: 5vw;margin-top:2vw ;border-radius:0vw 70vw 0vw 0vw; width: 40vw;">Đi từ:...đến...Ngày.../.../...</h6>
   </div>
   <div style="margin-left:5vw ;margin-top: -2vw;border-style:groove;border-radius:2vw 2vw 2vw 2vw;width: 40vw;height: 15vw;">
     <div style="display: flex; flex-direction: row;">
@@ -34,8 +31,9 @@
       <button style="background-color:red;margin-left: 40px;height: 25px;width: 80px; border: 1px solid red; color: white;">Toa</button>
     </div>
   </div>
+ <div class="containerGio">
   <div class="giohang">
-    <div class="gio">
+    <div class="gio" *ngFor="let gio of DSGioVe">
       <table class="table">
         <tr>
             <td>Thời gian đi:</td>
@@ -48,61 +46,72 @@
             <td>Ga đến:</td>
            </tr>
            <tr>
-            <td>Số ghế</td>
+            <td>Số ghế: {{gio.SoGe}}</td>
             <td>Loại chỗ</td>
            </tr>
       </table>
     </div>
-    <div class="btt">
+    
+
+    </div>
+    <div class="btnContainer">
       <table>
-        <tr>
-          <td><h3 style="margin-top: 9vw;">Giỏ vé</h3></td>
-          <td><button style="background-color: #ACD5E9; border: 0vw solid #ACD5E9;border-radius: 0.5vw;
-            padding: 0.5vw; margin: 1vw;margin-top: 9vw ; margin-left: 15vw; ">
-             Xóa khỏi giỏ hàng
-            </button></td>
-            <td><button style="background-color: #ACD5E9; border: 0vw solid #ACD5E9;border-radius: 0.5vw;
-              padding: 0.5vw; margin: 1vw;margin-left: 1vw; margin-top: 9vw;">
-              Mua vé
-            </button></td>
-        </tr>
-      </table>
+      <tr>
+        <td><h3>Giỏ vé</h3></td>
+        <td><button>
+           Xóa khỏi giỏ hàng
+          </button></td>
+          <td><button>
+            Mua vé
+          </button></td>
+      </tr>
+    </table>
     </div>
   </div>
+ 
+ </div>
   <div class="chuyentau">
     <h6 style="text-align: center;">Chuyến tàu</h6>
-    <div class="lichtrinh">
-      <table>
-        <tr>
-          <td>
-            Thời gian đi...
-          </td>
-        </tr>
+    <div *ngFor="let lt of HanhTrinh">
+      <div class="lichtrinh" *ngFor="let tau of DSTau" (click)="TauSelected(tau.MaTau,lt.IDLichTrinh)">
+        <table>
           <tr>
             <td>
-              Thời gian đến...
+              Thời gian đi...{{lt.Column1}}
             </td>
           </tr>
-          <tr>
-            <td>
-              Số chỗ trống...
-            </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <td>
-              Số chỗ đã đặt...
-            </td>
-          </tr>
-      </table>
+            <tr>
+              <td>
+                Thời gian đến...{{lt.Column2}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Số chỗ trống...{{lt.SoLuongCho_Trong}}
+              </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <td>
+                Số chỗ đã đặt...
+              </td>
+            </tr>
+        </table>
+      </div>
     </div>
-  </div>
-  <div class="toatau">
-    <h6 style="margin-left: 3vw; margin-top: 1vw;">Toa tàu</h6>
-    <div class="toa">
-      <p style="text-align: center; margin: -1vw;">TOA 1</p>
     </div>
-  </div>
+
+      <div class="toatau">
+        <h6 style="margin-left: 3vw; margin-top: 1vw;">Toa tàu</h6>
+        <div class="listToa">
+          <div class="toa" *ngFor="let toa of DSToa" (click)="ToaSelected(toa.MaToaTau)">{{toa.MaToaTau}}>
+
+        </div>
+        </div>
+      </div>
+
+
   <div class="ghe">
     <h6 style="margin-left: 3vw; margin-top: 1vw;">Ghế</h6>
-    <div class="vtrighe">
-      <p style="text-align: center; margin: 0.2vw;">Ghế số</p>
+    <div class="Listghe">
+      <div class="vtrighe" *ngFor="let ghe of DSGhe" (click)="gheSelected(ghe.SoGhe)">{{ghe.SoGhe}}</div>
     </div>
-  </div>
+    </div>
+    

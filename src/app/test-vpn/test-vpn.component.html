@@ -1,9 +1,20 @@
 <div class="TauList">
-  <div class="tauItem" *ngFor="let tau of DSTau" (click)="TauSelected(tau.MaTau)">{{tau.MaTau}}</div>
+  <div  *ngFor="let lt of HanhTrinh">
+    <div class="tauItem" *ngFor="let tau of DSTau" (click)="TauSelected(tau.MaTau,lt.IDLichTrinh)">
+      <p>Ngay bd: {{lt.Column1}} Ngay kt: {{lt.Column2}}</p>
+      <p>So cho trong {{lt.SoLuongCho_Trong}}</p>
+    </div>
+  </div>
+  
 </div>
+
 <div class="ToaList">
   <div class="ToaItem" *ngFor="let toa of DSToa" (click)="ToaSelected(toa.MaToaTau)">{{toa.MaToaTau}}</div>
 </div>
 <div class="GheList">
-  <div class="gheItem" *ngFor="let ghe of DSGhe" >{{ghe.SoGhe}}</div>
+  <div class="gheItem" *ngFor="let ghe of DSGhe" (click)="gheSelected(ghe.SoGhe)">{{ghe.SoGhe}}</div>
+</div>
+<div class="GioVe">
+  <div class="Ve" *ngFor="let ve of DSGioVe">{{ve.MaGiove}}</div>
+
 </div>

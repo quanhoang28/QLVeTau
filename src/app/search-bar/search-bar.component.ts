@@ -8,26 +8,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit{
-  ngOnInit(): void {
-    this.LayDanhSachGa();
-  }
   constructor(private router: Router,private SharedService:SharedService) {}
   DanhSachGa:any=[];
   DanhSachNgayDi:any=[];
   DanhSachNgayDen:any=[];
   DanhSachLichTrinh:any=[];
+  DanhSachHanhTrinh:any=[];
   gaDi:any;
   gaDen:any;
+  NgayDi:any;
+  NgayDen:any;
+  ngOnInit(): void {
+    this.LayDanhSachGa();
+  }
+ 
  TimVe(){
-    this.router.navigateByUrl('/timve')
+  this.SharedService.sendHanhTrinh(this.DanhSachLichTrinh)
+  alert(this.gaDi+this.gaDen+this.NgayDi+this.NgayDen + this.DanhSachLichTrinh)
+   this.router.navigateByUrl('/timve')
  }
  LayDanhSachGa(){
   this.SharedService.GetTenGa().subscribe(data=>{this.DanhSachGa=data})
  }
  LayNgayKhoiHanh(){
   this.SharedService.GetNgayDi(this.gaDi,this.gaDen).subscribe(data=>{this.DanhSachNgayDi=data})
+
  }
  LayNgayDen(){
   this.SharedService.GetNgayDen(this.gaDi,this.gaDen).subscribe(data=>{this.DanhSachNgayDen=data})
+ }
+ LayLichTrinh(){
+  this.SharedService.GetHTNgayDen(this.NgayDi,this.gaDi,this.NgayDen,this.gaDen).subscribe(data=>{this.DanhSachLichTrinh=data})
  }
 }
