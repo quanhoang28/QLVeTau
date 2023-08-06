@@ -1,17 +1,17 @@
 .hd{justify-content: center;}
 .td{
   justify-content: center;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 .rule {
-    padding: 10px;
-    margin-bottom: 5%;
-    margin-left: 20%;
+    padding: 15px;
+    margin-bottom: 7%;
+    margin-left: 25%;
     justify-content: center;
   }
 .video{
   margin: 10px;
-  margin-left: 25%;
+  margin-left: 20%;
   margin-top: 3%;
   justify-content: center;
 }
