@@ -28,7 +28,7 @@
             border-left:1px solid #ddd ;
             border-right: 1px solid #ddd;"></th>
         </tr>
-        <tr>
+        <tr class="veColumn" *ngFor="let ve of DSGioVe">
             <td style=" border-bottom: 1px solid #ddd;
             border-left:1px solid #ddd ;
             border-right: 1px solid #ddd;">
@@ -42,30 +42,33 @@
             <td style=" border-bottom: 1px solid #ddd;
             border-left:1px solid #ddd ;
             border-right: 1px solid #ddd;">
-                <p>Tàu:</p>
+                <p>Tàu: </p>
                 <p>Thời gian đi:</p>
                 <p>Thời gian đến:</p>
                 <p>Ga đi:</p>
                 <p>Ga đến:</p>
-                <p>Số ghế:</p>
-                <p>Loại chỗ:</p>
+                <p>Số ghế: {{ve.SoGhe}}</p>
+                <p>Loại vé: {{ve.IDLoaiVe}}</p>
             </td>
             <td style=" border-bottom: 1px solid #ddd;
             border-left:1px solid #ddd ;
-            border-right: 1px solid #ddd;">...</td>
+            border-right: 1px solid #ddd;">{{ve.GiaTien}}</td>
             <td style=" border-bottom: 1px solid #ddd;
             border-left:1px solid #ddd ;
             border-right: 1px solid #ddd;">...</td>
             <td style=" border-bottom: 1px solid #ddd;
             border-left:1px solid #ddd ;
-            border-right: 1px solid #ddd;">...</td>
+            border-right: 1px solid #ddd;" ><p *ngFor="let khuyenMai of voucher">{{khuyenMai.HeSoGiam}}</p>
             <td style=" border-bottom: 1px solid #ddd;
             border-left:1px solid #ddd ;
-            border-right: 1px solid #ddd;">...</td>
+            border-right: 1px solid #ddd;"> <ng-container *ngIf="voucherUsed,else elseBlock"><p *ngFor="let khuyenMai of voucher">{{ve.GiaTien-ve.GiaTien*khuyenMai.HeSoGiam}}</p></ng-container> 
+            <ng-template #elseBlock>
+            <p>{{ve.GiaTien}}</p>
+            </ng-template></td>
             <td style=" border-bottom: 1px solid #ddd;
             border-left:1px solid #ddd ;
             border-right: 1px solid #ddd;">
-                <input type="checkbox" value="">
+                <input type="checkbox" value=""  (change)="checkedTest(ve.MaGiove)">
             </td>
         </tr>
             <tr>
@@ -73,13 +76,22 @@
                 border-left:1px solid #ddd ;
                 border-right: 1px solid #ddd;">
                     <label for="adkm">Áp dụng mã khuyễn mãi:</label>
-                    <input type="text" id="adkm" name="adkm" style="margin: 10px;">
-                    <p style="margin: 10px; margin-left: 90%; margin-top:-30px;">Tổng tiền..</p>
+                    <input type="text" id="adkm" name="adkm" style="margin: 10px;" [(ngModel)]="maGiamGia">
+                    <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 5px;
+                    padding: 10px; margin: 15px;" (click)="getVoucher()">
+                   Áp dụng
+               </button>
+                    <p style="margin: 10px; margin-left: 90%; margin-top:-30px;">Tổng tiền
+                        <ng-container *ngIf="voucherUsed,else elseBlock"><p *ngFor="let khuyenMai of voucher">{{tongTien[0].Column1-tongTien[0].Column1*khuyenMai.HeSoGiam}}</p></ng-container> 
+                        <ng-template #elseBlock>
+                        <p>{{tongTien[0].Column1}}</p>
+                        </ng-template>
+                    </p>
                 </td>
             </tr>
     </table>
     <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 5px;
-     padding: 8px; margin: 30px;margin-left: 75%; margin-top: -1px;">
+     padding: 8px; margin: 30px;margin-left: 75%; margin-top: -1px;" (click)=" deleteBtnOnClick()">
     Xóa khỏi giỏ hàng
 </button>
 <div class="tt" >
@@ -90,7 +102,7 @@
     <tr>
         <td>
             <label for="name">Họ tên:</label>
-        <input type="text" id="name" name="name" style="margin-left:49px;"><br>
+        <input type="text" id="name" name="name" style="margin-left:49px;" [(ngModel)]="tenkh"><br>
         </td>
         <td>
             <label for="httt">Hình thức thanh toán:</label>
@@ -100,7 +112,7 @@
     <tr>
         <td>
             <label for="sdt">Số điện thoại:</label>
-        <input type="text" id="sdt" name="sdt" style="margin-left:20px;"><br>  
+        <input type="text" id="sdt" name="sdt" style="margin-left:20px;" [(ngModel)]="sdt"><br>  
         </td>
         <td>
             <label for="nganhang">Ngân hàng(nếu chọn thanh toán bằng online banking):</label>
@@ -110,7 +122,7 @@
     <tr>
         <td>
             <label for="cccd">CCCD</label>
-        <input type="text" id="cccd" name="cccd" style="margin-left:55px;"><br>
+        <input type="text" id="cccd" name="cccd" style="margin-left:55px;" [(ngModel)]="cccd"><br>
         </td>
         <td>
             <label for="stk">Số tài khoản(nếu chọn thanh toán bằng online banking)</label>
@@ -120,7 +132,7 @@
     <tr>
         <td colspan="2">
             <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 5px;
-            padding: 10px; margin: 15px;margin-left: 50%;">
+            padding: 10px; margin: 15px;margin-left: 50%;" (click)=" datVe()">
            Đặt vé
        </button>
         </td>

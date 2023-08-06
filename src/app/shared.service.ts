@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIurl="http://localhost:12302/api";
+  readonly APIurl="http://192.168.1.42:12302/api";
   behaviorSubect=new BehaviorSubject<any>(null);
   constructor(private http:HttpClient) { }
   GetTenGa():Observable<any[]>{
@@ -48,6 +48,18 @@ export class SharedService {
   InsertGioVe(val:any){
     return this.http.post<any>(this.APIurl+"/Ve/insertGioVe",val);
   }
+  InsertVe(val:any){
+    return this.http.post<any>(this.APIurl+"/Ve/insertVe",val);
+  }
+  InsertDatCho(val:any){
+    return this.http.post<any>(this.APIurl+"/Ve/insertDatCho",val);
+  }
+  InsertKhachHang(val:any){
+    return this.http.post<any>(this.APIurl+"/KhachHang/insertKhachHang",val);
+  }
+  GetKH(CCCD:any,sdt:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/Ve/GetKhachHang?cccd="+CCCD+"&sdt="+sdt)
+  }
   GetLoaiGhe(toaTau:any):Observable<any[]>{
     return this.http.get<any>(this.APIurl+"/Ve/GetLoaiGhe?maToa="+toaTau)
   }
@@ -56,5 +68,14 @@ export class SharedService {
   }
   GetThongTinDoanTau(maDoanTau:any):Observable<any[]>{
     return this.http.get<any>(this.APIurl+"/Ve/GetThongTinDoanTau?maDoanTau="+maDoanTau)
+  }
+  xoaGioVe(idGioVe:any){
+    return this.http.delete(this.APIurl+"/Ve/deleteGioVe?maGioVe="+idGioVe)
+  }
+  GetVoucher(idVoucher:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/Ve/GetVoucher?maVoucher="+idVoucher)
+  }
+  GetTongTien():Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/Ve/GetTongTien")
   }
 }

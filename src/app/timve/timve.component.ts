@@ -1,17 +1,20 @@
 import { SharedService } from './../shared.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-timve',
   templateUrl: './timve.component.html',
-  styleUrls: ['./timve.component.css']
+  styleUrls: ['./timve.component.css'],
+
 })
 export class TimveComponent implements OnInit{
   ngOnInit(): void {
     this.taiLaiDanhSachTau();
     this.getLichTrinh();
     this.getGioVe();
+    this.getDoanTau();
   }
-  constructor(private SharedService:SharedService) {  }
+  constructor(private SharedService:SharedService,private Router:Router) {  }
   DSTau:any=[];
   DSToa:any=[];
   DSGhe:any=[];
@@ -28,26 +31,54 @@ export class TimveComponent implements OnInit{
   maGioVe:any;
   idGhe:any;
   maTau:any;
+  DSGioDelete:any=[];
+   checkedTest(gio:any){
+    var list:string = " "
+    if (this.DSGioDelete.includes(gio)) {
+      // Giá trị đã tồn tại, xóa khỏi mảng
+      const index = this.DSGioDelete.indexOf(gio);
+      this.DSGioDelete.splice(index, 1);
+    } else {
+      // Giá trị không tồn tại, thêm vào mảng
+      this.DSGioDelete.push(gio);
+    }
+      for(let i=0;i<this.DSGioDelete.length;i++){
+        list+= ""+ this.DSGioDelete[i]
+      }
+      alert(list)
+  }
   taiLaiDanhSachTau(){
     this.SharedService.GetTau().subscribe(data=>{this.DSTau=data})
   }
-  TauSelected(tau:any,lichtrinh:any){
-    this.SharedService.GetToa(tau).subscribe(data=>{this.DSToa=data})
-    this.SharedService.GetDoanTau(tau).subscribe(data=>{this.DSDoanTau=data})
+  deleteBtnOnClick(){
+    for(let i=0;i<this.DSGioDelete.length;i++){
+      this.SharedService.xoaGioVe(this.DSGioDelete[i]).subscribe(data=>alert(data.toString()))
+    }
+    this.getGioVe();
+    this.DSGioDelete=[]
+  }
+  getDoanTau(){
+    this.SharedService.GetToa(this.maTau).subscribe(data=>{this.DSToa=data})
+    this.SharedService.GetDoanTau(this.maTau).subscribe(data=>{this.DSDoanTau=data})
     const gheItem=document.getElementsByClassName("gheItem") as HTMLCollectionOf<HTMLDivElement>;
     for(let i=0;i<gheItem.length;i++){
       gheItem[i].style.visibility="hidden"
     }
-    //getIDLichtrinh
+  
+    this.IDDoanTau=this.DSDoanTau[0].MaDoanTau}
+  TauSelected(tau:any,lichtrinh:any){
     this.IDLichTrinh=lichtrinh
-    //getIDDoangTau
-    this.IDDoanTau=this.DSDoanTau[0].MaDoanTau
+    this.maTau=tau
+    this.getDoanTau()
+    alert(this.IDLichTrinh+this.DSDoanTau[0].MaDoanTau)
   }
   ToaSelected(toa:any){
     this.SharedService.GetGhe(toa).subscribe(data=>{this.DSGhe=data})
     this.SharedService.GetLoaiGhe(toa).subscribe(data=>{this.DSLoaiCho=data})
     this.GiaGhe=this.DSLoaiCho[0].GiaTien
     //GetGiaGhe
+
+    alert(this.GiaGhe)
   }
   getLichTrinh(){
     this.SharedService.behaviorSubect.subscribe(data=>{this.HanhTrinh=data})
@@ -87,8 +118,13 @@ export class TimveComponent implements OnInit{
       this.SharedService.InsertGioVe(val).subscribe(res=>{alert(res.toString())});
       
     }
+   
+    muaVe(){
+      this.Router.navigateByUrl('/muave')
+    }
     getTTDoan(){
       this.SharedService.GetThongTinDoanTau(this.IDDoanTau).subscribe(data=>{this.DSTTDoanTau=data})
     }  
+   
   }
   

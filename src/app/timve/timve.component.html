@@ -39,7 +39,7 @@
             <td>Thời gian đi:</td>
             <td>Thời gian đến:</td>
             <td rowspan="3">Thời gian giữ vé</td>
-            <td rowspan="3"><input type="checkbox" value=""></td>
+            <td rowspan="3"> <input type="checkbox" class="deleteCbx" (change)="checkedTest(gio.MaGiove)" class="checkDelete"></td>
            </tr>
            <tr>
             <td>Ga đi:</td>
@@ -58,10 +58,10 @@
       <table>
       <tr>
         <td><h3>Giỏ vé</h3></td>
-        <td><button>
+        <td><button class="deleteBtn" (click)="deleteBtnOnClick()">
            Xóa khỏi giỏ hàng
           </button></td>
-          <td><button>
+          <td><button class="btnMuaVe" (click)="muaVe()">
             Mua vé
           </button></td>
       </tr>
