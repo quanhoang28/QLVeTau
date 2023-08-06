@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIurl="http://192.168.1.42:12302/api";
+  readonly APIurl="https://trainticketapi.azurewebsites.net/api";
   behaviorSubect=new BehaviorSubject<any>(null);
   constructor(private http:HttpClient) { }
   GetTenGa():Observable<any[]>{

@@ -71,7 +71,7 @@ ngOnInit(): void {
         cccd: this.cccd,
         diaChi:""
       };
-      this.SharedService.InsertKhachHang(val).subscribe(res=>{alert(res.toString())});
+      this.SharedService.InsertKhachHang(val).subscribe(res=>{alert("thêm khách hàng thành công")});
       this.SharedService.GetKH(this.cccd,this.sdt).subscribe(data=>{this.dskhachHang=data
       this.DSGioVe.array.forEach((element:any) => {
         var val1={
@@ -91,7 +91,7 @@ ngOnInit(): void {
         idGioVe: element.MaGiove,
         trangThaI: "",
       };
-      this.SharedService.InsertDatCho(val1).subscribe(res=>{alert(res.toString())});
+      this.SharedService.InsertDatCho(val1).subscribe(res=>{alert("đặt chỗ thành công")});
     });
   })
   }

@@ -24,7 +24,7 @@ export class SearchBarComponent implements OnInit{
  
  TimVe(){
   this.SharedService.sendHanhTrinh(this.DanhSachLichTrinh)
-  alert(this.gaDi+this.gaDen+this.NgayDi+this.NgayDen + this.DanhSachLichTrinh)
+   alert(this.gaDi+this.gaDen+this.NgayDi+this.NgayDen + this.DanhSachLichTrinh)
    this.router.navigateByUrl('/timve')
  }
  LayDanhSachGa(){
