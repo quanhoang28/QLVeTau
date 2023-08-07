@@ -5,20 +5,20 @@
 <div class="ttdc">
     <label for="mdv">Mã đặt vé:</label>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="mdv" name="madv">
+    <input type="text" id="mdv" name="madv" [(ngModel)]="madv">
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <label for="sdt">Số điện thoại:</label>
+    <label for="sdt">CCCD:</label>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="sdt" name="sdt">  &nbsp;&nbsp;&nbsp;&nbsp;
-    <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 3px;">
+    <input type="text" id="sdt" name="sdt" [(ngModel)]="cccd">  &nbsp;&nbsp;&nbsp;&nbsp;
+    <button style="background-color: #ACD5E9; border: 2px solid #ACD5E9;border-radius: 3px;" (click)="getTTDC()">
         Kiểm tra
      </button>
 </div><br><br>
 <div class="kqttdt">
-    <div class="kq">
+    <div class="kq" >
         <p>Mã hóa đơn:</p>
         <p>Mã vé</p>
-        <p>Mã đặt chỗ</p>
+        <p>Mã đặt chỗ:</p>
         <p>Người mua&nbsp;&nbsp;&nbsp;&nbsp;  Người bán:&nbsp;&nbsp;&nbsp;&nbsp;    Ngân hàng hưởng thụ:</p>
         <p>Giá vé &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Số tài khoản</p>
         <p>Tàu</p>

@@ -1,0 +1,16 @@
+.footer-Container{
+  margin-top: 1vw;
+  width: 80%;
+  border-top:1px solid black ;
+}
+.footer-Container div{
+  padding: 1vw;
+  font-size: 1vw;
+  
+  text-decoration: underline;
+  cursor: pointer;
+}
+div{
+  display: flex;
+  justify-content: center;
+}

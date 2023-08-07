@@ -1,5 +1,5 @@
 import { SharedService } from './../shared.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-timve',
@@ -13,8 +13,9 @@ export class TimveComponent implements OnInit{
     this.getLichTrinh();
     this.getGioVe();
     this.getDoanTau();
+    this.getAllGioVe();
   }
-  constructor(private SharedService:SharedService,private Router:Router) {  }
+  constructor(private SharedService:SharedService,private Router:Router, private ChangeDetectorRef:ChangeDetectorRef) {  }
   DSTau:any=[];
   DSToa:any=[];
   DSGhe:any=[];
@@ -32,6 +33,7 @@ export class TimveComponent implements OnInit{
   idGhe:any;
   maTau:any;
   DSGioDelete:any=[];
+  allGioVe:any=[];
    checkedTest(gio:any){
     var list:string = " "
     if (this.DSGioDelete.includes(gio)) {
@@ -47,15 +49,19 @@ export class TimveComponent implements OnInit{
       }
       alert(list)
   }
+  getAllGioVe(){
+    this.SharedService.getAllGioVe().subscribe(data=>{this.allGioVe=data})
+  }
   taiLaiDanhSachTau(){
     this.SharedService.GetTau().subscribe(data=>{this.DSTau=data})
   }
   deleteBtnOnClick(){
     for(let i=0;i<this.DSGioDelete.length;i++){
-      this.SharedService.xoaGioVe(this.DSGioDelete[i]).subscribe(data=>alert(data.toString()))
+      this.SharedService.xoaGioVe(this.DSGioDelete[i]).subscribe(data=>alert("xoa gio"))
     }
     this.getGioVe();
     this.DSGioDelete=[]
+    this.ChangeDetectorRef.detectChanges()
   }
   getDoanTau(){
     this.SharedService.GetToa(this.maTau).subscribe(data=>{this.DSToa=data})
@@ -77,8 +83,11 @@ export class TimveComponent implements OnInit{
     this.SharedService.GetLoaiGhe(toa).subscribe(data=>{this.DSLoaiCho=data})
     this.GiaGhe=this.DSLoaiCho[0].GiaTien
     //GetGiaGhe
-
+   
     alert(this.GiaGhe)
+  }
+  isMatched(soGhe:any):boolean{
+    return this.allGioVe.some((ghe:any) => ghe.SoGhe === soGhe);
   }
   getLichTrinh(){
     this.SharedService.behaviorSubect.subscribe(data=>{this.HanhTrinh=data})
@@ -103,6 +112,7 @@ export class TimveComponent implements OnInit{
     this.insertGioVe();
     this.getGioVe();
     this.getTTDoan();
+    this.ChangeDetectorRef.detectChanges()
   }
   insertGioVe(){
     var val={
@@ -115,7 +125,7 @@ export class TimveComponent implements OnInit{
         soGhe: this.SoGhe,
         giaTien: this.GiaGhe
       };
-      this.SharedService.InsertGioVe(val).subscribe(res=>{alert(res.toString())});
+      this.SharedService.InsertGioVe(val).subscribe(res=>{alert("Đã thêm vé vào giỏ")});
       
     }
    

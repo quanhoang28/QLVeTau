@@ -1,5 +1,5 @@
 import { SharedService } from './../shared.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-muave',
@@ -11,7 +11,7 @@ ngOnInit(): void {
   this.getGioVe();
   this.getTongTien()
 }
-  constructor(private SharedService:SharedService){}
+  constructor(private SharedService:SharedService,private ChangeDetectorRef:ChangeDetectorRef){}
   DSGioVe:any=[];
   maGiamGia:any;
   voucher:any=[];
@@ -71,7 +71,7 @@ ngOnInit(): void {
         cccd: this.cccd,
         diaChi:""
       };
-      this.SharedService.InsertKhachHang(val).subscribe(res=>{alert("thêm khách hàng thành công")});
+      this.SharedService.InsertKhachHang(val).subscribe(res=>{alert("thêm khách hàng thành công, vui lòng nhấn vào đặt vé lần nữa")});
       this.SharedService.GetKH(this.cccd,this.sdt).subscribe(data=>{this.dskhachHang=data
       this.DSGioVe.array.forEach((element:any) => {
         var val1={
@@ -85,15 +85,30 @@ ngOnInit(): void {
     })
     }
     this.DSGioVe.forEach((element:any) => {
-      var val1={
-        maDatCho: this.generateRandomCode(9),
+      var mave:string="";
+      mave=this.generateRandomCode(9)
+      var val1={ 
+        maDatCho:mave ,
         idKH: this.dskhachHang[0].IDkhachhang,
         idGioVe: element.MaGiove,
         trangThaI: "",
       };
-      this.SharedService.InsertDatCho(val1).subscribe(res=>{alert("đặt chỗ thành công")});
+      this.SharedService.InsertDatCho(val1).subscribe(res=>{alert("đặt chỗ thành công, mã đặt chỗ của quý khách là: "+mave)});
+      var val={
+        maGioVe: element.MaGiove,
+        idLichTrinh: "KH001",
+        trangThai: 1,
+        idLoaiVe: "VE001",
+        idDoanTau: "",
+        viTri: "",
+        soGhe: "",
+        giaTien: 0
+      };
+      this.SharedService.capNhatTrangThaiGio(val).subscribe(res=>{alert("Đã cap nhat trang thai giỏ")});
+      
     });
   })
+  this.ChangeDetectorRef.detectChanges();
   }
 
   generateRandomCode(length: number): string {
@@ -111,10 +126,11 @@ ngOnInit(): void {
   
   deleteBtnOnClick(){
     for(let i=0;i<this.DSGioDelete.length;i++){
-      this.SharedService.xoaGioVe(this.DSGioDelete[i]).subscribe(data=>alert(data.toString()))
+      this.SharedService.xoaGioVe(this.DSGioDelete[i]).subscribe(data=>alert("xoa gio"))
     }
     this.getGioVe();
     this.DSGioDelete=[]
+    this.ChangeDetectorRef.detectChanges()
   }
   getGioVe(){
     this.SharedService.GetGioVe().subscribe(data=>{this.DSGioVe=data})
